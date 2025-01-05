@@ -8,13 +8,13 @@ function addTask() {
         let li = document.createElement("li");
         li.innerHTML = inputBar.value;
 
-        // Create the remove button (×)
+        // the remove button (×)
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
 
         listContainer.appendChild(li);
-        inputBar.value = "";  // Clear the input field
+        inputBar.value = "";  // clear the input field
         storeData();
     }
 }
