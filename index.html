@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dynamic_todo_list</title>
+    <title>Dynamic To-Do List</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
     <div class="container">
-
-<div class="todo-list">
-<h2>To-Do List <img src="/note.webp" alt="notepad icon"></h2>
-<div class="task-bar">
-<input type="text" id="input-bar" placeholder="Add a task">
-<button onclick="addTask()">Add</button>
-</div>
-<ul id="list-container">
-<!-- <li class="done">First task</li>
-<li>Second task</li>
-<li>Third task</li> -->
-</ul>
-</div>
+        <div class="todo-list">
+            <h2>To-Do List <img src="/note.webp" alt="notepad icon"></h2>
+            <div class="task-bar">
+                <input type="text" id="input-bar" placeholder="Add a task">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- The tasks will be added here -->
+            </ul>
+        </div>
     </div>
 
     <script src="index.js"></script>
