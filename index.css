@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(140deg, #8A2BE2, #4B0082);
+    background: linear-gradient(150deg, #20456e, #4d3e5c); /* Background gradient for the page */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,54 +30,45 @@ body {
 }
 
 .todo-list h2 {
-    color: #002765;
+    color:  #002765;; /* Color for the "To-Do List & Reminder" title text */
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .todo-list h2 img {
-    width: 25px;
+    width: 25px; /* Size of the notepad icon */
     margin-left: 10px;
 }
 
 /* Reminder section styles */
 .reminder-bar {
     display: flex;
-    flex-direction: row; /* Ensure input fields are on one row by default */
-    align-items: center;
-    justify-content: space-between;
-    background: #edeef0;
+    flex-direction: column; /* Stack vertically on all screen sizes */
+    align-items: stretch; /* Stretch inputs to fill the available width */
+    background: #f0edf0;
     border-radius: 30px;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.reminder-bar input[type="text"] {
-    flex: 2; /* Take up 2x more space than the datetime-local */
+.reminder-bar input[type="text"],
+.reminder-bar input[type="datetime-local"] {
     padding: 12px;
     font-size: 16px;
     background: transparent;
     border: 1px solid #ccc;
     border-radius: 30px;
-    margin-right: 10px;
+    margin-bottom: 10px; 
+    width: 100%; /
 }
 
-.reminder-bar input[type="datetime-local"] {
-    flex: 1; /* Make the datetime-local smaller */
-    padding: 12px;
-    font-size: 16px;
-    background: transparent;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    margin-right: 10px;
-}
 
 .reminder-bar button {
     border: none;
     outline: none;
     padding: 14px 30px;
-    background: #ff5945;
+    background: #4C9D9F;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -85,8 +76,9 @@ body {
     transition: background 0.3s;
 }
 
+/* Hover effect for the "Add Task" button */
 .reminder-bar button:hover {
-    background: #ff2a1c;
+    background: #3b7c7f; /* Darker shade when hovering over the "Add Task" button */
 }
 
 /* Task list styling */
@@ -144,25 +136,24 @@ ul li span:hover {
     background: #edeef0;
 }
 
-/* Responsive Design */
+/* Responsive Design - Stacking on all screen sizes */
 @media screen and (max-width: 600px) {
     .todo-list {
         padding: 20px 15px 30px;
     }
 
     .reminder-bar {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: column; /* Ensuring everything is stacked */
     }
 
     .reminder-bar input[type="text"],
     .reminder-bar input[type="datetime-local"] {
-        width: 100%; /* Full width on mobile */
-        margin-bottom: 10px; /* Space between the inputs */
+        width: 100%; /* Full width on all screen sizes */
+        margin-bottom: 10px; /* Space between inputs */
     }
 
     .reminder-bar button {
-        width: 100%; /* Button takes full width on mobile */
+        width: 100%; /* Full width button on mobile */
         margin-top: 10px;
     }
 
@@ -175,21 +166,5 @@ ul li span:hover {
         font-size: 18px;
         width: 35px;
         height: 35px;
-    }
-}
-
-/* Larger screen adjustments */
-@media screen and (min-width: 601px) {
-    .reminder-bar {
-        flex-direction: row; /* Keep inputs in a row on larger screens */
-    }
-
-    .reminder-bar input[type="text"],
-    .reminder-bar input[type="datetime-local"] {
-        margin-right: 10px; /* Space between the inputs */
-    }
-
-    .reminder-bar button {
-        margin-left: 10px; /* Space between the button and the inputs */
     }
 }
