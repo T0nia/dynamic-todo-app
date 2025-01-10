@@ -1,3 +1,4 @@
+/* General reset and styles */
 * {
     margin: 0;
     padding: 0;
@@ -40,26 +41,39 @@ body {
     margin-left: 10px;
 }
 
-.task-bar {
+/* Reminder section styles */
+.reminder-bar {
     display: flex;
+    flex-direction: row; /* Ensure input fields are on one row by default */
     align-items: center;
     justify-content: space-between;
     background: #edeef0;
     border-radius: 30px;
     padding: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
+.reminder-bar input[type="text"] {
+    flex: 2; /* Take up 2x more space than the datetime-local */
     padding: 12px;
     font-size: 16px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 10px;
 }
 
-button {
+.reminder-bar input[type="datetime-local"] {
+    flex: 1; /* Make the datetime-local smaller */
+    padding: 12px;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.reminder-bar button {
     border: none;
     outline: none;
     padding: 14px 30px;
@@ -71,10 +85,11 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+.reminder-bar button:hover {
     background: #ff2a1c;
 }
 
+/* Task list styling */
 ul {
     list-style: none;
     padding: 0;
@@ -135,19 +150,19 @@ ul li span:hover {
         padding: 20px 15px 30px;
     }
 
-    .task-bar {
+    .reminder-bar {
         flex-direction: column;
         align-items: stretch;
     }
 
-    input {
-        padding: 14px;
-        font-size: 14px;
+    .reminder-bar input[type="text"],
+    .reminder-bar input[type="datetime-local"] {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 10px; /* Space between the inputs */
     }
 
-    button {
-        width: 100%;
-        padding: 14px 0;
+    .reminder-bar button {
+        width: 100%; /* Button takes full width on mobile */
         margin-top: 10px;
     }
 
@@ -161,4 +176,20 @@ ul li span:hover {
         width: 35px;
         height: 35px;
     }
-};
+}
+
+/* Larger screen adjustments */
+@media screen and (min-width: 601px) {
+    .reminder-bar {
+        flex-direction: row; /* Keep inputs in a row on larger screens */
+    }
+
+    .reminder-bar input[type="text"],
+    .reminder-bar input[type="datetime-local"] {
+        margin-right: 10px; /* Space between the inputs */
+    }
+
+    .reminder-bar button {
+        margin-left: 10px; /* Space between the button and the inputs */
+    }
+}

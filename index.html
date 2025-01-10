@@ -10,12 +10,17 @@
     <div class="container">
         <div class="todo-list">
             <h2>To-Do List <img src="/note.webp" alt="notepad icon"></h2>
-            <div class="task-bar">
+
+            <!-- Reminder input section placed on top -->
+            <div class="reminder-bar">
                 <input type="text" id="input-bar" placeholder="Add a task">
-                <button onclick="addTask()">Add</button>
+                <input type="datetime-local" id="reminder-time">
+                <button onclick="addTask()">Add Task</button>
             </div>
+
+            <!-- Existing task list -->
             <ul id="list-container">
-                <!-- The tasks will be added here -->
+                <!-- Tasks will be dynamically added here -->
             </ul>
         </div>
     </div>
