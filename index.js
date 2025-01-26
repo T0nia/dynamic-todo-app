@@ -45,7 +45,7 @@ function setReminderAlarm(reminder, task) {
 }
 
 function playAlarmSound() {
-    const audio = new Audio('https://www.soundjay.com/button/beep-07.wav'); // Example sound
+    const audio = new Audio('https://www.soundjay.com/button/beep-07.wav'); // beep sound
     audio.play();
 }
 
