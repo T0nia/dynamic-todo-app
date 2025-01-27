@@ -5,7 +5,9 @@ const listContainer = document.getElementById("list-container");
 function addTask() {
     if (inputBar.value === '') {
         alert("You have to write something");
-    } else {
+    } 
+    
+    else {
         let li = document.createElement("li");
         li.innerHTML = inputBar.value;
 
