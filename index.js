@@ -1,5 +1,5 @@
 const inputBar = document.getElementById("input-bar");
-const reminderTime = document.getElementById("reminder-time");  // New input for reminder time
+const reminderTime = document.getElementById("reminder-time");  
 const listContainer = document.getElementById("list-container");
 
 function addTask() {
